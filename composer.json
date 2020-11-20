@@ -1,0 +1,38 @@
+{
+    "name": "royceltd/laravel-bulksms",
+    "description": "Easily integrate bulk SMS into laravel app",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Royce Technologies Ltd",
+            "email": "developer@roycetechnologies.co.ke"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "ixudra/curl": "6.*"
+    },
+    "autoload-dev": {
+        "psr-4": {
+           "RoyceLtd\\BulkSMS\\": "src"
+        }
+    },
+        "autoload": {
+        "psr-4": {
+            "RoyceLtd\\BulkSMS\\": "src"
+        }
+
+    },
+    "extra": {
+    "laravel": {
+        "providers": [
+            "RoyceLtd\\BulkSMS\\RoyceBulkSmsServiceProvider"
+        ],
+        "aliases": {
+            "RoyceBulkSMS": "RoyceLtd\\BulkSMS\\Facades\\RoyceBulkSMSFacade"
+        }
+    }
+},
+    "prefer-stable": true
+}
