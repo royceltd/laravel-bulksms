@@ -27,10 +27,10 @@
     "extra": {
     "laravel": {
         "providers": [
-            "RoyceLtd\\LaravelBulkSMS\\RoyceLaravelBulkSMSServiceProvider"
+            "RoyceLtd\\LaravelBulkSMS\\LaravelBulkSMSServiceProvider"
         ],
         "aliases": {
-            "RoyceBulkSMS": "RoyceLtd\\LaravelBulkSMS\\Facades\\RoyceLaravelBulkSMSFacade"
+            "RoyceBulkSMS": "RoyceLtd\\LaravelBulkSMS\\Facades\\LaravelBulkSMSFacade"
         }
     }
 },
