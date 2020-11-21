@@ -15,22 +15,22 @@
     },
     "autoload-dev": {
         "psr-4": {
-           "RoyceLtd\\BulkSMS\\": "src"
+           "RoyceLtd\\LaravelBulkSMS\\": "src"
         }
     },
         "autoload": {
         "psr-4": {
-            "RoyceLtd\\BulkSMS\\": "src"
+            "RoyceLtd\\LaravelBulkSMS\\": "src"
         }
 
     },
     "extra": {
     "laravel": {
         "providers": [
-            "RoyceLtd\\BulkSMS\\RoyceBulkSmsServiceProvider"
+            "RoyceLtd\\LaravelBulkSMS\\RoyceLaravelBulkSMSServiceProvider"
         ],
         "aliases": {
-            "RoyceBulkSMS": "RoyceLtd\\BulkSMS\\Facades\\RoyceBulkSMSFacade"
+            "RoyceBulkSMS": "RoyceLtd\\LaravelBulkSMS\\Facades\\RoyceLaravelBulkSMSFacade"
         }
     }
 },
