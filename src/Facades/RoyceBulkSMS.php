@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * Class ShoppingCartFacade
  * @package LaraShout\ShoppingCart
  */
-class LaravelBulkSMSFacade extends Facade
+class RoyceBulkSMS extends Facade
 {
     /**
      * @return string
