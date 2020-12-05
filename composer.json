@@ -3,10 +3,13 @@
     "description": "Easily integrate bulk SMS into laravel app",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/royceltd/laravel-bulksms",
+    "keywords": ["laravel", "Bulk SMS", "laravel bulksms", "Bulksms kenya"],
     "authors": [
         {
             "name": "Royce Technologies Ltd",
-            "email": "developer@roycetechnologies.co.ke"
+            "email": "developer@roycetechnologies.co.ke",
+            "homepage": "https://roycetechnologies.co.ke"
         }
     ],
     "minimum-stability": "dev",
