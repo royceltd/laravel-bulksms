@@ -14,11 +14,11 @@ class CreateSentTextMessagesTable extends Migration
     public function up()
     {
         Schema::create('sent_text_messages', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->longText('text_message');
-            $table->unsignedInteger('sender_id');
+            
             $table->string('senderid_string');
-            $table->unsignedInteger('user_id');
+            
             $table->string('phone_number');
             $table->string('status')->default('draft');
             $table->string('message_id')->nullable();

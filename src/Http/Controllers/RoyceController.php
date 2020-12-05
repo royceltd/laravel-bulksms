@@ -14,7 +14,7 @@ class RoyceController extends Controller
     public function index()
     {
         $phone = "0713727937";
-        $sms = "hello world";
+        $sms = "Royce technologies LTD";
 
         RoyceBulkSMS::sendSMS($phone, $sms);
     }
