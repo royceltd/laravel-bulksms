@@ -9,6 +9,7 @@ use RoyceLtd\LaravelBulkSMS\Http\Controllers\RoyceController;
 
 Route::group(['namespace' => 'RoyceLtd\LaravelBulkSMS\Http\Controllers'], function () {
     Route::get('royceroute', ['uses' => 'RoyceController@index']);
+    Route::get('textmessages', ['uses' => 'RoyceController@messages']);
     // Route::get('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sms']);
     // Route::post('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sendSMS']);
 

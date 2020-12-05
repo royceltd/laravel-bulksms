@@ -29,6 +29,7 @@ class LaravelBulkSMSServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'royceviews');
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         if ($this->app->runningInConsole()) {
             // Export the migration
