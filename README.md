@@ -1,5 +1,12 @@
 ### Laravel bulk sms
 
+This package provides an easy inteface for sending SMS in your laravel application. Open a free account [Royce BulkSMS](http://bulksms.roycetechnologies.co.ke), under API menu click generate API. Copy the API key and paste it in your .env file
+
+```sh
+API_KEY=apikey
+SENDER_ID=RoyceLTD
+```
+
 ## Features
 
 - Provide an easy interface for sending bulk sms

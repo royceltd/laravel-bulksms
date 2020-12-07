@@ -21,7 +21,7 @@ class RoyceController extends Controller
     }
     public function messages()
     {
-        $messages = SentTextMessage::orderBy('id', 'DSC')->paginate(100);
+        $messages = SentTextMessage::orderBy('id', 'desc')->paginate(100);
         // dd($messages);
         return view('royceviews::textmessages', ['messages' => $messages]);
     }
