@@ -5,6 +5,7 @@ namespace RoyceLtd\LaravelBulkSMS\Services;
 use Illuminate\Support\Facades\DB;
 use Ixudra\Curl\Facades\Curl;
 use RoyceLtd\LaravelBulkSMS\Models\SentTextMessage;
+use Illuminate\Support\Facades\Log;
 
 class LaravelBulkSMS
 {
@@ -27,8 +28,9 @@ class LaravelBulkSMS
         $newtext->save();
 
 
-        $url = 'https://bulksms.roycetechnologies.co.ke/api/sendmessage';
+        $url = 'http://localhost:8000/api/sendmessage';
         $apikey = env('API_KEY');
+        
 
         $response = Curl::to($url)
             ->withData(array(
@@ -38,7 +40,7 @@ class LaravelBulkSMS
             ))
             ->withBearer($apikey)
             ->post();
-
+            Log::info($response);
 
         $res = json_decode($response);
 
