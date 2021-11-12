@@ -38,4 +38,12 @@ class RoyceController extends Controller
         $txt->delivery_time = $request->delivery_time;
         $txt->save();
     }
+
+    public function base(){
+        return view('royceviews::base');
+
+    }
+    public function apiKeys(){
+        return view('royceviews::apikeys');
+    }
 }
