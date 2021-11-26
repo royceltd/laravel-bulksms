@@ -48,6 +48,36 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
+                <div class="row">
+                    <div class="col-sm-12">
+                       @if (isset($errors))
+                       {{dd($errors)}}
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        {{-- successs --}}
+                        @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                        @endif
+                        {{-- error --}}
+                        @if (session('error_status'))
+                        <div class="alert alert-success">
+                            {{ session('error_status') }}
+                        </div>
+                        @endif
+                    </div>
+                </div>
                 @yield('content')
             </div>
         </div>

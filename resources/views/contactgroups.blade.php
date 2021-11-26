@@ -34,14 +34,29 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Contact Group</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <form action="{{url('/bulksms/contacts-group')}}" method="POST">
-            {{ csrf_field() }}
+        {{ csrf_field() }}
+            
       <div class="modal-body">
+          
+            <div class="row">
+                <div class="col-sm-8">
+                    <label>Name <small style="color: red">*</small></label>
+                    <input type="text" class="form-control" name="group" placeholder="Group Name"  required/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <label>Description (Optional)</label>
+                    <textarea class="form-control" name="description" placeholder="Group description (optional)"></textarea>
+                    
+                </div>
+            </div>
         
 
         
@@ -61,6 +76,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Description</th>
             <th>Date</th>
             
             
@@ -68,11 +84,15 @@
     </thead>
     <tbody>
         @if(!empty($groups) && $groups->count())
+        @php $count=0 @endphp
             @foreach($groups as $key => $value)
+
+            @php $count++ @endphp
                 <tr>
-                    <td>{{ $value->phone_number }}</td>
-                    <td>{{ $value->text_message }}</td>
-                    <td>{{ $value->status }}</td>
+                    <td>{{ $count}}</td>
+                    <td>{{ $value->name }}</td>
+                    <td>{{ $value->description }}</td>
+                    
                     <td>{{ $value->created_at }}</td>
 
                 </tr>

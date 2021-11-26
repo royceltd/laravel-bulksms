@@ -48,9 +48,10 @@ class RoyceController extends Controller
 
     }
     public function contacts(){
-        $apikey= Contact::all();
+        $contacts= Contact::all();
         // dd($apikey);
-        return view('royceviews::apikeys',['apikeys'=>$apikey]);
+        $groups=ContactGroup::all();
+        return view('royceviews::contacts',['contacts'=>$contacts,'groups'=>$groups]);
 
     }
 
@@ -62,7 +63,35 @@ class RoyceController extends Controller
     }
 
     public function saveContactsGroup(Request $request){
-        
+        $this->validate($request,[
+            'group'=>'required|unique:contact_groups,name'
+
+        ]);
+        $group=new ContactGroup;
+        $group->name=$request->group;
+        $group->description=$request->description;
+        $group->save();
+
+        return back()->with('status','Group saved successfully');
+
+    }
+
+    public function saveContacts(Request $request){
+        // dd($request->all());
+        // $this->validate($request,[
+        //     'first_namesf'=>'required'
+
+        // ]);
+        $contact= new Contact;
+        $contact->first_name=$request->first_name;
+        $contact->other_names=$request->other_names;
+        $contact->phone_number=$request->phone_number;
+        $contact->alt_phone_number=$request->alt_phone_number;
+        $contact->group_id=$request->group;
+        $contact->email=$request->email;
+        $contact->save();
+
+        return back()->with('status','Contact added successfully');
 
     }
 
