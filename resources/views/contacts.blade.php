@@ -19,10 +19,43 @@
    
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h4>Api Keys</h4>
+                <h4>OutBox</h4>
                 
             </div>
         </div>
+
+        <div class="table-responsive">
+
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Phone Number</th>
+            <th>Message</th>
+            <th>Status</th>
+            <th>Date</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @if(!empty($apikeys) && $apikeys->count())
+            @foreach($apikeys as $key => $value)
+                <tr>
+                    <td>{{ $value->phone_number }}</td>
+                    <td>{{ $value->text_message }}</td>
+                    <td>{{ $value->status }}</td>
+                    <td>{{ $value->created_at }}</td>
+
+                </tr>
+            @endforeach
+        @else
+            <tr>
+                <td colspan="10">There are no data.</td>
+            </tr>
+        @endif
+    </tbody>
+</table>
+</div>
 
    
 

@@ -6,9 +6,13 @@ namespace RoyceLtd\LaravelBulkSMS\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use RoyceLtd\LaravelBulkSMS\Facades\RoyceBulkSMS;
 use RoyceLtd\LaravelBulkSMS\Models\SentTextMessage;
 use Illuminate\Support\Facades\Log;
+use RoyceLtd\LaravelBulkSMS\Models\ApiKey;
+use RoyceLtd\LaravelBulkSMS\Models\Contact;
+use RoyceLtd\LaravelBulkSMS\Models\ContactGroup;
 
 class RoyceController extends Controller
 {
@@ -27,7 +31,7 @@ class RoyceController extends Controller
         return view('royceviews::textmessages', ['messages' => $messages]);
     }
     public function deliveryReport(Request $request){
-        Log::info($request);
+        // Log::info($request);
         $txt = SentTextMessage::where('message_id', '=', $request->unique_id)->first();
         $txt->delivery_status = $request->delivery_status;
         $txt->delivery_code = $request->delivery_status;
@@ -43,7 +47,24 @@ class RoyceController extends Controller
         return view('royceviews::base');
 
     }
-    public function apiKeys(){
-        return view('royceviews::apikeys');
+    public function contacts(){
+        $apikey= Contact::all();
+        // dd($apikey);
+        return view('royceviews::apikeys',['apikeys'=>$apikey]);
+
     }
+
+    public function contactsGroup(){
+        $groups= ContactGroup::all();
+        // dd($apikey);
+        return view('royceviews::contactgroups',['groups'=>$groups]);
+
+    }
+
+    public function saveContactsGroup(Request $request){
+        
+
+    }
+
+    
 }

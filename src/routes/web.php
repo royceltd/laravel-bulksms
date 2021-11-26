@@ -10,9 +10,15 @@ use RoyceLtd\LaravelBulkSMS\Http\Controllers\RoyceController;
 Route::group(['namespace' => 'RoyceLtd\LaravelBulkSMS\Http\Controllers'], function () {
     Route::get('royceroute', ['uses' => 'RoyceController@index']);
     Route::get('bulksms/dashboard', ['uses' => 'RoyceController@messages']);
-    Route::get('bulksms/apikeys', ['uses' => 'RoyceController@apiKeys']);
+    Route::get('bulksms/', ['uses' => 'RoyceController@messages']);
+    
     Route::get('base', ['uses' => 'RoyceController@base']);
     Route::post('deliveryreport', ['uses' => 'RoyceController@deliveryReport']);
+    Route::get('bulksms/contacts', ['uses' => 'RoyceController@contacts']);
+    Route::post('bulksms/contacts', ['uses' => 'RoyceController@saveContacts']);
+    Route::get('bulksms/contacts-group', ['uses' => 'RoyceController@contactsGroup']);
+    Route::post('bulksms/contacts-group', ['uses' => 'RoyceController@saveContactsGroup']);
+    
     // Route::get('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sms']);
     // Route::post('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sendSMS']);
 
