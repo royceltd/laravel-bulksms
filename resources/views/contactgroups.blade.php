@@ -76,6 +76,7 @@
         <tr>
             <th>#</th>
             <th>Name</th>
+            <th>Contacts</th>
             <th>Description</th>
             <th>Date</th>
             
@@ -91,6 +92,7 @@
                 <tr>
                     <td>{{ $count}}</td>
                     <td>{{ $value->name }}</td>
+                    <td>{{ $value->contacts_count }}</td>
                     <td>{{ $value->description }}</td>
                     
                     <td>{{ $value->created_at }}</td>

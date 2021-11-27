@@ -48,20 +48,7 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <div class="row">
-                    <div class="col-sm-12">
-                       @if (isset($errors))
-                       {{dd($errors)}}
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
-                    </div>
-                </div>
+                
                 <div class="row">
                     <div class="col-sm-12">
                         {{-- successs --}}
@@ -95,6 +82,13 @@
     $(document).ready(function() {
     $('#example').DataTable();
 } );
+</script>
+
+<script>
+    $("#checkAll").click(function(){
+        
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
 </script>
     </body>
 </html>

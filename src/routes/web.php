@@ -18,6 +18,13 @@ Route::group(['namespace' => 'RoyceLtd\LaravelBulkSMS\Http\Controllers'], functi
     Route::post('bulksms/contacts', ['uses' => 'RoyceController@saveContacts']);
     Route::get('bulksms/contacts-group', ['uses' => 'RoyceController@contactsGroup']);
     Route::post('bulksms/contacts-group', ['uses' => 'RoyceController@saveContactsGroup']);
+    Route::get('bulksms/single-text', ['uses' => 'RoyceController@singleText']);
+    Route::post('bulksms/single-text', ['uses' => 'RoyceController@sendSingleText']);
+    Route::get('bulksms/contacts-text', ['uses' => 'RoyceController@contactsText']);
+    Route::post('bulksms/contacts-text', ['uses' => 'RoyceController@sendContactsText']);
+
+    Route::get('bulksms/group-text', ['uses' => 'RoyceController@groupText']);
+    Route::post('bulksms/group-text', ['uses' => 'RoyceController@sendGroupText']);
     
     // Route::get('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sms']);
     // Route::post('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sendSMS']);

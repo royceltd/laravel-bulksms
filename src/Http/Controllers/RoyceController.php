@@ -48,7 +48,9 @@ class RoyceController extends Controller
 
     }
     public function contacts(){
-        $contacts= Contact::all();
+        $contacts= Contact::join('contact_groups','contact_groups.id','=','contacts.group_id')
+        ->select('contacts.*','contact_groups.name as group')
+        ->get();
         // dd($apikey);
         $groups=ContactGroup::all();
         return view('royceviews::contacts',['contacts'=>$contacts,'groups'=>$groups]);
@@ -56,7 +58,8 @@ class RoyceController extends Controller
     }
 
     public function contactsGroup(){
-        $groups= ContactGroup::all();
+        $groups= ContactGroup::withCount('contacts')->get();
+        // dd($groups);
         // dd($apikey);
         return view('royceviews::contactgroups',['groups'=>$groups]);
 
@@ -92,6 +95,108 @@ class RoyceController extends Controller
         $contact->save();
 
         return back()->with('status','Contact added successfully');
+
+    }
+
+    public function singleText(){
+
+
+
+        return view('royceviews::singletext');
+
+    }
+
+    public function sendSingleText(Request $request){
+        // $message= $request->message;
+
+        $phone_number = explode("\n", $request->phone_numbers);
+
+        // dd($phone_number);
+
+        foreach($phone_number as $phone){
+             RoyceBulkSMS::sendSMS($phone, $request->message);
+
+        }
+
+        return redirect('bulksms/dashboard')->with('status','SMS sent successfully');
+
+       
+
+
+    }
+
+    public function contactsText(){
+        $contacts= Contact::all();
+
+        return view('royceviews::contacttext',['contacts'=>$contacts]);
+
+
+    }
+
+    public function sendContactsText(Request $request){
+
+        // dd($request->all());
+
+        foreach($request->phone_numbers as $phone){
+            $separate= explode('}',$phone);
+
+            if($request->salutation=='Yes'){
+                $message="Hello $separate[1], $request->message";
+
+            }else{
+                $message=$request->message;
+
+            }
+
+            // dd($message);
+             RoyceBulkSMS::sendSMS($separate[0],$message );
+
+        }
+
+        return redirect('bulksms/dashboard')->with('status','SMS sent successfully');
+
+    }
+
+    public function groupText(){
+
+        $groups= ContactGroup::all();
+
+        return view('royceviews::grouptext',['groups'=>$groups]);
+
+    }
+
+    
+       public function sendGroupText(Request $request){
+
+        // dd($request->all());
+
+        foreach($request->groups as $group){
+            // $separate= explode('}',$phone);
+
+            $contacts= Contact::where('group_id',$group)->get();
+
+            foreach($contacts as $contact){
+                if($request->salutation=='Yes'){
+                $message="Hello $contact->first_name, $request->message";
+
+            }else{
+                $message=$request->message;
+
+            }
+
+
+            RoyceBulkSMS::sendSMS($contact->phone_number,$message );
+
+            }
+
+            
+
+            // dd($message);
+             
+
+        }
+
+        return redirect('bulksms/dashboard')->with('status','SMS sent successfully');
 
     }
 

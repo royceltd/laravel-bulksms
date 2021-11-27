@@ -19,7 +19,7 @@
    
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h4>OutBox</h4>
+                <h4>My Contacts</h4>
                 
             </div>
         </div>
@@ -108,6 +108,7 @@
             <th>Phone</th>
             <th>Alt Phone</th>
             <th>Email</th>
+            <th>Group</th>
             <th>Date</th>
             
         </tr>
@@ -120,10 +121,11 @@
                 <tr>
                     <td>{{ $count }}</td>
                     <td>{{ $value->first_name }}</td>
-                    <td>{{ $value->other_name }}</td>
+                    <td>{{ $value->other_names }}</td>
                     <td>{{ $value->phone_number }}</td>
                     <td>{{ $value->alt_phone_number }}</td>
                     <td>{{ $value->email }}</td>
+                    <td>{{ $value->group }}</td>
                     <td>{{ $value->created_at }}</td>
 
                 </tr>

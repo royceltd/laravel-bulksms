@@ -30,20 +30,26 @@
 <table id="example" class="display" style="width:100%">
     <thead>
         <tr>
+            <th>#</th>
             <th>Phone Number</th>
             <th>Message</th>
             <th>Status</th>
+            <th>Message Id</th>
             <th>Date</th>
             
         </tr>
     </thead>
     <tbody>
         @if(!empty($messages) && $messages->count())
+        @php $count=0 @endphp
             @foreach($messages as $key => $value)
+            @php $count++ @endphp
                 <tr>
+                    <td>{{ $count }}</td>
                     <td>{{ $value->phone_number }}</td>
                     <td>{{ $value->text_message }}</td>
                     <td>{{ $value->status }}</td>
+                    <td>{{ $value->message_id }}</td>
                     <td>{{ $value->created_at }}</td>
 
                 </tr>
