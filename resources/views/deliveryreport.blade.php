@@ -19,10 +19,36 @@
    
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h4>OutBox</h4>
+                <h4>Delivery Report</h4>
                 
             </div>
         </div>
+
+        <div class="row alert alert-primary">
+            <div class="col-sm-12">
+                {{$status}}
+            </div>
+        </div>
+
+       <form action="{{url('bulksms/delivery-report')}}" method="post">
+        {{ csrf_field() }}
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <label for="Message">Message Id</label>
+                    <input type="text" class="form-control" name="message_id" placeholder="Paste message ID" required />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </div>
+
+
+
+        </form>
 
    
    

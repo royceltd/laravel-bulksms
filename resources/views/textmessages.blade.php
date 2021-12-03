@@ -33,8 +33,11 @@
             <th>#</th>
             <th>Phone Number</th>
             <th>Message</th>
-            <th>Status</th>
+            
             <th>Message Id</th>
+            <th>Status</th>
+            <th>TAT</th>
+            <th>Delivery date</th>
             <th>Date</th>
             
         </tr>
@@ -48,8 +51,12 @@
                     <td>{{ $count }}</td>
                     <td>{{ $value->phone_number }}</td>
                     <td>{{ $value->text_message }}</td>
-                    <td>{{ $value->status }}</td>
+                    
                     <td>{{ $value->message_id }}</td>
+                    
+                    <td>{{ $value->status }}</td>
+                    <td>{{ $value->delivery_tat }}</td>
+                    <td>{{ $value->delivery_time }}</td>
                     <td>{{ $value->created_at }}</td>
 
                 </tr>
@@ -65,11 +72,15 @@
    
 
 {{$messages->links("pagination::bootstrap-4")}}
-<script>
+{{-- <script>
     $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable(
+        {
+  "pageLength": 100
+}
+    );
 } );
-</script>
+</script> --}}
 
  @endsection
 {{-- </body>

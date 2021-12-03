@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Log;
 use RoyceLtd\LaravelBulkSMS\Models\ApiKey;
 use RoyceLtd\LaravelBulkSMS\Models\Contact;
 use RoyceLtd\LaravelBulkSMS\Models\ContactGroup;
+use Ixudra\Curl\Facades\Curl;
 
 class RoyceController extends Controller
 {
@@ -26,7 +27,7 @@ class RoyceController extends Controller
     }
     public function messages()
     {
-        $messages = SentTextMessage::orderBy('id', 'desc')->paginate(100);
+        $messages = SentTextMessage::orderBy('id', 'desc')->paginate(50);
         // dd($messages);
         return view('royceviews::textmessages', ['messages' => $messages]);
     }
@@ -199,6 +200,57 @@ class RoyceController extends Controller
         return redirect('bulksms/dashboard')->with('status','SMS sent successfully');
 
     }
+
+    public function getDeliveryReport(){
+
+        return view('royceviews::deliveryreport',['status'=>'Enter message ID from outbox']);
+
+
+
+    }
+
+    public function pDeliveryReport(Request $request){
+
+        $url = 'https://bulksms.roycetechnologies.co.ke/api/delivery-report';
+        $apikey = env('API_KEY');
+        $response = Curl::to($url)
+            ->withData(array(
+                'message_id' => $request->message_id,
+                'sender_id' => env('SENDER_ID')
+                // 'text_message' => $message
+            ))
+            ->withBearer($apikey)
+            ->post();
+                Log::info($response);
+
+            
+            if(!$response){
+
+                return view('royceviews::deliveryreport',['status'=>'Check the message id and try again']);
+
+
+            }
+            $res = json_decode($response);
+            
+
+            $text= SentTextMessage::where('message_id',$request->message_id)->first();
+            $text->delivery_status=$res->delivery_status;
+            $text->status=$res->delivery_status;
+            $text->delivery_tat=$res->delivery_tat;
+            $text->delivery_time=$res->delivery_time;
+
+            $text->save();
+
+            return view('royceviews::deliveryreport',['status'=>'Delivery Report']);
+
+
+    }
+
+    public function setWebhook(){
+        return view('royceviews::webhook',['status'=>'Set Web hook URL']);
+        
+    }
+    
 
     
 }

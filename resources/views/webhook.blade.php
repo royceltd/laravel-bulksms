@@ -19,10 +19,14 @@
    
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h4>OutBox</h4>
+                <h4>Set up webhook URL</h4>
                 
             </div>
         </div>
+        <div class="row alert alert-info">
+            {{url('/bulksms/receive-delivery-report')}}
+        </div>
+        
 
    
    

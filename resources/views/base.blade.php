@@ -40,6 +40,14 @@
                                 <li><a class="dropdown-item" href="{{url('bulksms/contacts-group')}}">Contacts Group</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Delivery Report</a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="{{url('bulksms/delivery-report')}}">Delivery Reports</a></li>
+                                <li><a class="dropdown-item" href="{{url('bulksms/set-webhook')}}">Automate Delivery Report</a></li>
+                                {{-- <li><a class="dropdown-item" href="{{url('bulksms/contacts-group')}}">Contacts Group</a></li> --}}
+                            </ul>
+                        </li>
                         
                     </ul>
                 </div>
@@ -80,7 +88,11 @@
         <script src="js/scripts.js"></script>
         <script>
     $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable(
+        {
+  "pageLength": 50
+}
+    );
 } );
 </script>
 
@@ -90,5 +102,7 @@
     $('input:checkbox').not(this).prop('checked', this.checked);
 });
 </script>
+
+
     </body>
 </html>

@@ -25,6 +25,9 @@ Route::group(['namespace' => 'RoyceLtd\LaravelBulkSMS\Http\Controllers'], functi
 
     Route::get('bulksms/group-text', ['uses' => 'RoyceController@groupText']);
     Route::post('bulksms/group-text', ['uses' => 'RoyceController@sendGroupText']);
+    Route::get('bulksms/delivery-report', ['uses' => 'RoyceController@getDeliveryReport']);
+    Route::post('bulksms/delivery-report', ['uses' => 'RoyceController@pDeliveryReport']);
+    Route::get('bulksms/set-webhook', ['uses' => 'RoyceController@setWebhook']);
     
     // Route::get('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sms']);
     // Route::post('technohive-sendsms', ['uses' => 'LaravelBulkSMSController@sendSMS']);

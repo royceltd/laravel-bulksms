@@ -40,7 +40,7 @@ class LaravelBulkSMS
             ))
             ->withBearer($apikey)
             ->post();
-            Log::info($response);
+            // Log::info($response);
 
         $res = json_decode($response);
 
