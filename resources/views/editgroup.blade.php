@@ -19,19 +19,30 @@
    
         <div class="row">
             <div class="col-sm-12 text-center">
-                <h4>Set up webhook URL</h4>
+                <h4>Edit group</h4>
+
                 
             </div>
         </div>
-        <div class="row alert alert-info">
-            <center>Paste the following Link in the bulksms portal and Notification status will be forwarded to you automatically</center>
-            <ol>
-                <li>{{url('/bulksms/receive-delivery-report')}}</li>
-                <li></li>
-            </ol>
-            
-        </div>
-        
+        <form method="POST" action="{{url('/bulksms/edit-contact-group')}}">
+            {{ csrf_field() }}
+            <div class="row">
+                <input type="hidden" name="id" value="{{$group->id}}" />
+                <div class="col-sm-6">
+                    <label>
+                        Group Name
+                    </label>
+                    <input type="text" name="group" value="{{$group->name}}" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-sm-6">
+                    <input type="submit" value="Save changes" class="btn btn-primary" />
+                </div>
+            </div>
+
+        </form>
 
    
    

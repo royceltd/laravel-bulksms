@@ -54,7 +54,16 @@ class RoyceController extends Controller
         ->get();
         // dd($apikey);
         $groups=ContactGroup::all();
-        return view('royceviews::contacts',['contacts'=>$contacts,'groups'=>$groups]);
+        return view('royceviews::contacts',['contacts'=>$contacts,'status'=>'My Contact','groups'=>$groups]);
+
+    }
+    public function deleteContact($id){
+
+        $contact=Contact::find($id)->delete();
+        return back()->with('status','Contact deleted succesfully');
+        // return view('royceviews::contacts',['status'=>'Contact deleted succesfully']);
+
+
 
     }
 
@@ -63,6 +72,22 @@ class RoyceController extends Controller
         // dd($groups);
         // dd($apikey);
         return view('royceviews::contactgroups',['groups'=>$groups]);
+
+    }
+
+    public function editGroup($id){
+        $group= ContactGroup::find($id);
+
+        // $groups= ContactGroup::withCount('contacts')->get();
+        return view('royceviews::editgroup',['group'=>$group]);
+    }   
+
+    public function editContactGroup(Request $request){
+        $group= ContactGroup::find($request->id);
+        $group->name=$request->group;
+        $group->save();
+
+        return redirect('/bulksms/contacts-group');
 
     }
 
@@ -250,6 +275,8 @@ class RoyceController extends Controller
         return view('royceviews::webhook',['status'=>'Set Web hook URL']);
         
     }
+
+    
     
 
     

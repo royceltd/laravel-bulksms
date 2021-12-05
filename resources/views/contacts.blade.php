@@ -23,6 +23,11 @@
                 
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-12">
+                {{$status}}
+            </div>
+        </div>
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Add Contact</button>
 
@@ -110,6 +115,7 @@
             <th>Email</th>
             <th>Group</th>
             <th>Date</th>
+            <th>Delete</th>
             
         </tr>
     </thead>
@@ -127,6 +133,13 @@
                     <td>{{ $value->email }}</td>
                     <td>{{ $value->group }}</td>
                     <td>{{ $value->created_at }}</td>
+                    <td>
+
+                        <a href="{{url('bulksms/delete',$value->id)}}" class="btn btn-sm btn-outline-danger">Delete</a>
+                        
+                        {{-- {{ $value->id }} --}}
+                    
+                    </td>
 
                 </tr>
             @endforeach

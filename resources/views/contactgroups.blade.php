@@ -79,6 +79,7 @@
             <th>Contacts</th>
             <th>Description</th>
             <th>Date</th>
+            <th>Action</th>
             
             
         </tr>
@@ -96,6 +97,10 @@
                     <td>{{ $value->description }}</td>
                     
                     <td>{{ $value->created_at }}</td>
+
+                    <td>
+                        <a href="{{url('/bulksms/edit-group',$value->id)}}" class="btn btn-sm btn-primary">Edit</a>
+                    </td>
 
                 </tr>
             @endforeach
