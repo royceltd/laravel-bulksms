@@ -21,7 +21,7 @@ class RoyceController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => [
+        $this->middleware(['web','auth'], ['except' => [
             'index', 'receiveDeliveryReport'
         ]]);
         
