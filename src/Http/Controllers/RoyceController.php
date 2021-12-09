@@ -18,12 +18,17 @@ use Ixudra\Curl\Facades\Curl;
 class RoyceController extends Controller
 {
     //
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => [
+            'index', 'receiveDeliveryReport'
+        ]]);
+        
+    }
     public function index()
     {
-        $phone = "0713727937";
-        $sms = "Testing delivery report";
-
-        RoyceBulkSMS::sendSMS($phone, $sms);
+        return "ok";
     }
     public function messages()
     {
