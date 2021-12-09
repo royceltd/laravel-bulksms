@@ -29,6 +29,7 @@ class LaravelBulkSMS
 
 
         $url = 'https://bulksms.roycetechnologies.co.ke/api/sendmessage';
+       
         $apikey = env('API_KEY');
         
 

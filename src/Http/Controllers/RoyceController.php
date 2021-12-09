@@ -276,6 +276,20 @@ class RoyceController extends Controller
         
     }
 
+    public function receiveDeliveryReport(Request $request){
+
+        // Log::info($request->all());
+
+        $res= SentTextMessage::where('message_id',$request->message_id)->first();
+        $res->delivery_time=$request->delivery_time;
+        $res->delivery_tat=$request->delivery_tat;
+        $res->delivery_description=$request->delivery_description;
+        $res->save();
+
+        return  "ok";
+
+    }
+
     
     
 
