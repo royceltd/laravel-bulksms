@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,34 +10,53 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js" > </script>
 </head>
-<body>
-    <div class="container">
+<body> --}}
+    @extends('royceviews::base')
+
+    @section('content')
+        
+   
+   
         <div class="row">
             <div class="col-sm-8">
-                <h4>Sent Text.</h4>
-                <h6>Kindly note that the search feature only searches current page. </h6>
-                <br><br>
+                <h4>OutBox</h4>
+                
             </div>
         </div>
+
+<div class="table-responsive">
 
 
 <table id="example" class="display" style="width:100%">
     <thead>
         <tr>
+            <th>#</th>
             <th>Phone Number</th>
             <th>Message</th>
+            
+            <th>Message Id</th>
             <th>Status</th>
+            <th>TAT</th>
+            <th>Delivery date</th>
             <th>Date</th>
             
         </tr>
     </thead>
     <tbody>
         @if(!empty($messages) && $messages->count())
+        @php $count=0 @endphp
             @foreach($messages as $key => $value)
+            @php $count++ @endphp
                 <tr>
+                    <td>{{ $count }}</td>
                     <td>{{ $value->phone_number }}</td>
                     <td>{{ $value->text_message }}</td>
+                    
+                    <td>{{ $value->message_id }}</td>
+                    
                     <td>{{ $value->status }}</td>
+                    <td>{{ $value->delivery_tat }}</td>
+                    <td>{{ $value->delivery_time }}</td>
                     <td>{{ $value->created_at }}</td>
 
                 </tr>
@@ -49,13 +68,20 @@
         @endif
     </tbody>
 </table>
+</div>
    
 
 {{$messages->links("pagination::bootstrap-4")}}
-<script>
+{{-- <script>
     $(document).ready(function() {
-    $('#example').DataTable();
+    $('#example').DataTable(
+        {
+  "pageLength": 100
+}
+    );
 } );
-</script>
-</body>
-</html>
+</script> --}}
+
+ @endsection
+{{-- </body>
+</html> --}}
