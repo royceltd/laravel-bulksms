@@ -266,7 +266,7 @@ class RoyceController extends Controller
 
             $text->save();
 
-            return view('royceviews::deliveryreport',['status'=>'Delivery Report']);
+            return view('royceviews::deliveryreport',['status'=>'Delivery Report','report'=>$res]);
 
 
     }

@@ -24,11 +24,11 @@
             </div>
         </div>
         <div class="row alert alert-info">
-            <center>Paste the following Link in the bulksms portal and Notification status will be forwarded to you automatically</center>
-            <ol>
-                <li>{{url('/bulksms/receive-delivery-report')}}</li>
-                <li></li>
-            </ol>
+            <center>Paste  Link below in the bulksms portal and Notification status will be forwarded to you automatically</center>
+            
+                <strong>{{url('/bulksms/receive-delivery-report')}}</strong>
+               
+            
             
         </div>
         

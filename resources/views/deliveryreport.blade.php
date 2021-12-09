@@ -50,6 +50,48 @@
 
         </form>
 
+        
+
+        @if(isset($report))
+        <br />
+        
+        <table class="table table-responsive">
+            <tr>
+                <th>
+                    Message Id
+                </th>
+                <th>
+                    Status
+                </th>
+                <th>
+                    Delivery Time
+                </th>
+                <th>
+                    TAT
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    {{$report->message_id}}
+                </td>
+                <td>
+                    {{$report->delivery_status}}
+                </td>
+                <td>
+                    {{$report->delivery_time}}
+                </td>
+                <td>
+                    {{$report->delivery_tat}}
+                </td>
+            </tr>
+        </table>
+
+        @endif
+
+        <table>
+
+        </table>
+
    
    
 
