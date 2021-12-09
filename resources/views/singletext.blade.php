@@ -29,6 +29,7 @@
         </div>
 
         <form action="{{url('bulksms/single-text')}}" method="POST">
+            {{ csrf_field() }}
 
         
         <div class="row pull-left">
