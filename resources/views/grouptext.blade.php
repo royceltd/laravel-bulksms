@@ -99,7 +99,7 @@
 
                     {{-- </div> --}}
                     <label>
-                        Phone Numbers
+                        Groups
                     </label>
                     @foreach ($groups as $item)
                     <br />

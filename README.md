@@ -1,6 +1,8 @@
 ### Laravel bulk sms
 
-This package provides an easy inteface for sending SMS in your laravel application. Open a free account [Royce BulkSMS](http://bulksms.roycetechnologies.co.ke), under API menu click generate API. Copy the API key and paste it in your .env file
+![Bulk sms Dashboard](https://bulksms.roycetechnologies.co.ke/assets/outbox.png)
+
+This package provides an easy inteface for sending SMS in your laravel application and also a Facade to send SMS from any controller. Open a free account [Royce BulkSMS](http://bulksms.roycetechnologies.co.ke), under API menu click generate API. Copy the API key and paste it in your .env file
 
 ```sh
 API_KEY=apikey
@@ -9,10 +11,14 @@ SENDER_ID=RoyceLTD
 
 ## Features
 
-- Provide an easy interface for sending bulk sms
-- Provides a database table for storing sent text.
-- An interface for viewing sent text (once you install the package and ran migration visit _**/textmessages**_ url to view sent texts)
-- Provide a callback URL you add to your bulksms account. This will ensure that you receive delivery status back to your application (_coming soon_)
+- **Provide an easy interface for sending bulk sms.**
+- **Provides a database table for storing sent text.**
+- **An interface for viewing sent text** (once you install the package and ran migration visit {{your_domain}} _**/bulksms**_ url to view sent texts)
+- **Receive Instant delivery status.** Add webhook url to your bulksms account we'll send you message delivery status back to your application
+- **Create contact groups**
+- **Create and store contacts**
+
+**Checkout more at the end**
 
 ## Installation
 
@@ -94,4 +100,24 @@ Check sample below for guidance.
 
 ### Viewing sent text
 
-After running migration, visit **/textmessages**
+After running migration, visit {{your domain}} **/bulksms**
+
+### Screenshots
+
+- Send send sms to multiple phone number. I can be copied from excel
+
+![Send Single SMS](https://bulksms.roycetechnologies.co.ke/assets/sendsinglesms.png)
+
+- Send Group SMS
+
+![Send group SMS](https://bulksms.roycetechnologies.co.ke/assets/sendtogroups.png)
+
+- Send to Multiple Contacts
+
+![Send to Contacts](https://bulksms.roycetechnologies.co.ke/assets/sendtocontacts.png)
+
+- Add contacts and Groups
+
+![Bulk sms Dashboard](https://bulksms.roycetechnologies.co.ke/assets/newcontact.png)
+
+- Register Webhook URL to receive instant delivery notification

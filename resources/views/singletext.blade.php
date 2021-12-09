@@ -19,10 +19,13 @@
    
         <div class="row">
             <div class="col-sm-12">
-                <h4>Send Single Test</h4>
+                <h4>Send Single Text</h4>
 
                 
             </div>
+        </div>
+        <div class="alert alert-secondary">
+            If you have contacts in excel, Copy column and past the box, There should be one phone number per line
         </div>
 
         <form action="{{url('bulksms/single-text')}}" method="POST">
@@ -42,7 +45,7 @@
                     <label>
                         Phone Numbers
                     </label>
-                    <textarea class="form-control" name="phone_numbers" rows="15" required></textarea>
+                    <textarea class="form-control" name="phone_numbers" rows="15" placeholder="Phone Numbers separated by new line e.g &#10;0713727937&#10;254739***657" required></textarea>
                 </div>
             </div>
             <div class="col-sm-4">
