@@ -25,6 +25,8 @@
         </div>
         <div class="row alert alert-info">
             <center>Paste  Link below in the bulksms portal and Notification status will be forwarded to you automatically</center>
+
+            
             
                 <strong>{{url('/bulksms/receive-delivery-report')}}</strong>
                
