@@ -241,7 +241,7 @@ class RoyceController extends Controller
 
     public function pDeliveryReport(Request $request){
 
-        $url = 'https://bulksms.roycetechnologies.co.ke/api/delivery-report';
+        $url = 'https://roycebulksms.com/api/delivery-report';
         $apikey = env('API_KEY');
         $response = Curl::to($url)
             ->withData(array(

@@ -1,8 +1,8 @@
 ### Laravel bulk sms
 
-![Bulk sms Dashboard](https://bulksms.roycetechnologies.co.ke/assets/outbox.png)
+![Bulk sms Dashboard](https://roycebulksms.com/assets/outbox.png)
 
-This package provides an easy inteface for sending SMS in your laravel application and also a Facade to send SMS from any controller. Open a free account [Royce BulkSMS](http://bulksms.roycetechnologies.co.ke), under API menu click generate API. Copy the API key and paste it in your .env file
+This package provides an easy inteface for sending SMS in your laravel application and also a Facade to send SMS from any controller. Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
 
 ```sh
 API_KEY=apikey
@@ -73,7 +73,7 @@ php artisan migrate
 
 ### Laravel usage
 
-This package provides an easy inteface for sending SMS in your laravel application. Open a free account [Royce BulkSMS](http://bulksms.roycetechnologies.co.ke), under API menu click generate API. Copy the API key and paste it in your .env file
+This package provides an easy inteface for sending SMS in your laravel application. Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
 
 ```sh
 API_KEY=apikey
@@ -106,18 +106,18 @@ After running migration, visit {{your domain}} **/bulksms**
 
 - Send send sms to multiple phone number. I can be copied from excel
 
-![Send Single SMS](https://bulksms.roycetechnologies.co.ke/assets/sendsinglesms.png)
+![Send Single SMS](https://roycebulksms.com/assets/sendsinglesms.png)
 
 - Send Group SMS
 
-![Send group SMS](https://bulksms.roycetechnologies.co.ke/assets/sendtogroups.png)
+![Send group SMS](https://roycebulksms.com/assets/sendtogroups.png)
 
 - Send to Multiple Contacts
 
-![Send to Contacts](https://bulksms.roycetechnologies.co.ke/assets/sendtocontacts.png)
+![Send to Contacts](https://roycebulksms.com/assets/sendtocontacts.png)
 
 - Add contacts and Groups
 
-![Bulk sms Dashboard](https://bulksms.roycetechnologies.co.ke/assets/newcontact.png)
+![Bulk sms Dashboard](https://roycebulksms.com/assets/newcontact.png)
 
 - Register Webhook URL to receive instant delivery notification
