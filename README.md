@@ -75,6 +75,8 @@ php artisan migrate
 
 This package provides an easy inteface for sending SMS in your laravel application. Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
 
+
+
 ```sh
 API_KEY=apikey
 SENDER_ID=RoyceLTD
