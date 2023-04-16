@@ -34,12 +34,12 @@ class LaravelBulkSMSServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         if ($this->app->runningInConsole()) {
         //     // Export the migration
-            if (!class_exists('CreateSentTextMessagesTable')) {
-                $this->publishes([
-                    __DIR__ . '/../database/migrations/create_sent_text_messages_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_sent_text_messages_table.php'),
-                    // you can add any number of migrations here
-                ], 'roycebulksms');
-            }
+            // if (!class_exists('CreateSentTextMessagesTable')) {
+            //     $this->publishes([
+            //         __DIR__ . '/../database/migrations/create_sent_text_messages_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_sent_text_messages_table.php'),
+            //         // you can add any number of migrations here
+            //     ], 'roycebulksms');
+            // }
             // if (!class_exists('CreateApiKeysTable')) {
             //     $this->publishes([
             //         __DIR__ . '/../database/migrations/2021_11_26_064637_create_api_keys_table.php' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_api_keys_table.php.php'),
