@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSendTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSendTable extends Migration
      */
     public function up()
     {
-        Schema::create('sent_text_messages', function (Blueprint $table) {
+        Schema::create('text_messages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->longText('text_message');
             
@@ -44,6 +44,6 @@ class CreateSendTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sent_text_messages');
+        Schema::dropIfExists('text_messages');
     }
 }
