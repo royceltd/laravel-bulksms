@@ -19,6 +19,28 @@ class CreateContactGroupsTable extends Migration
             $table->longText('description')->nullable();
             $table->timestamps();
         });
+        Schema::create('sent_text_messages', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->longText('text_message');
+            
+            $table->string('senderid_string');
+            
+            $table->string('phone_number');
+            $table->string('status')->default('draft');
+            $table->string('message_id')->nullable();
+            $table->string('response_code')->nullable();
+            $table->string('response_description')->nullable();
+            $table->string('network_id')->nullable();
+            $table->string('delivery_status')->nullable();
+            $table->string('delivery_description')->nullable();
+            $table->string('delivery_tat')->nullable();
+            $table->string('delivery_networkid')->nullable();
+            $table->string('delivery_time')->nullable();
+            $table->string('delivery_code')->nullable();
+            $table->string('delivery_network_id')->nullable();
+            $table->string('delivery_response_description')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -29,5 +51,6 @@ class CreateContactGroupsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('contact_groups');
+        Schema::dropIfExists('sent_text_messages');
     }
 }
