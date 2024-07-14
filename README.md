@@ -2,7 +2,7 @@
 
 ![Bulk sms Dashboard](https://roycebulksms.com/assets/outbox.png)
 
-This package provides an easy inteface for sending SMS in your laravel application and also a Facade to send SMS from any controller. Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
+This package provides  a Facade to send SMS from any controller. Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
 
 ```sh
 API_KEY=apikey
@@ -11,14 +11,13 @@ SENDER_ID=RoyceLTD
 
 ## Features
 
-- **Provide an easy interface for sending bulk sms.**
-- **Provides a database table for storing sent text.**
-- **An interface for viewing sent text** (once you install the package and ran migration visit {{your_domain}} _**/bulksms**_ url to view sent texts)
-- **Receive Instant delivery status.** Add webhook url to your bulksms account we'll send you message delivery status back to your application
-- **Create contact groups**
-- **Create and store contacts**
 
-**Checkout more at the end**
+- **Provides a database table for storing sent text. table name:sent_text_messages**
+
+- **Receive Instant delivery status.** Add webhook url to your bulksms account we'll send you message delivery status back to your application
+
+
+
 
 ## Installation
 
@@ -73,7 +72,7 @@ php artisan migrate
 
 ### Laravel usage
 
-This package provides an easy inteface for sending SMS in your laravel application. Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
+T Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
 
 
 
@@ -100,9 +99,6 @@ Check sample below for guidance.
 
 ```
 
-### Viewing sent text
-
-After running migration, visit {{your domain}} **/bulksms**
 
 ### Screenshots
 
