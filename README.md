@@ -1,6 +1,5 @@
 ### Laravel bulk sms
-
-![Bulk sms Dashboard](https://roycebulksms.com/assets/outbox.png)
+_V2 supports V9 and above use V1 for V8 and below_
 
 This package provides  a Facade to send SMS from any controller. Open a free account [Royce BulkSMS](https://roycebulksms.com), under API menu click generate API. Copy the API key and paste it in your .env file
 
@@ -27,37 +26,7 @@ Require the `royceltd/laravel-bulksms` package in your `composer.json` and updat
 composer require royceltd/laravel-bulksms
 ```
 
-### Integration
 
-Add the service provider to your `config/app.php` file:
-
-```php
-
-    'providers'     => array(
-
-        //...
-         RoyceLtd\LaravelBulkSMS\LaravelBulkSMSServiceProvider::class,
-
-    ),
-
-```
-
-Add the facade to your `config/app.php` file:
-
-```php
-
-    'aliases'       => array(
-
-        //...
-       'RoyceBulkSMS' => \RoyceLtd\LaravelBulkSMS\Facades\RoyceBulkSMS::class
-
-    ),
-
-```
-
-```sh
-php artisan vendor:publish --tag="roycebulksms"
-```
 
 ### Run migration
 
@@ -99,23 +68,14 @@ Check sample below for guidance.
 
 ```
 
+### Support
 
-### Screenshots
+We offer free integration. React us via call/whatsapp +254 713727937 developer@roycetechnologies.co.ke
 
-- Send send sms to multiple phone number. I can be copied from excel
+### API integration
+If you would like to integrate API without using package check docs here: [API documentation](https://developer.roycebulksms.com/)
 
-![Send Single SMS](https://roycebulksms.com/assets/sendsinglesms.png)
 
-- Send Group SMS
 
-![Send group SMS](https://roycebulksms.com/assets/sendtogroups.png)
 
-- Send to Multiple Contacts
 
-![Send to Contacts](https://roycebulksms.com/assets/sendtocontacts.png)
-
-- Add contacts and Groups
-
-![Bulk sms Dashboard](https://roycebulksms.com/assets/newcontact.png)
-
-- Register Webhook URL to receive instant delivery notification
