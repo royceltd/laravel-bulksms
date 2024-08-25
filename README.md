@@ -22,10 +22,10 @@ SENDER_ID=RoyceLTD
 
 ## Installation
 
-Require the `royceltd/laravel-bulksms` package in your `composer.json` and update your dependencies:
+Install`royceltd/laravel-bulksms:*` 
 
 ```sh
-composer require royceltd/laravel-bulksms
+composer require royceltd/laravel-bulksms:*
 ```
 
 ### Integration
